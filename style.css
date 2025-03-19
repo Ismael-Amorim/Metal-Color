@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -57,37 +60,13 @@ body {
     text-decoration: underline;
 }
 
-.titulo {
+.section-title {
     text-align: center;
     color: #060741;
     text-transform: uppercase;
     font-weight: bold;
 }
 
-/*PRODUTOS*/
-.product-list {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-.product-card {
-    background: white;
-    border-radius: 10px;
-    text-align: center;
-    padding: 15px;
-    width: 200px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-.product-card img {
-    width: 100%;
-    height: 100%;
-    border-radius: 35%;
-    border: 2px solid #ddd;
-}
 
 .favorite {
     position: absolute;
@@ -109,11 +88,119 @@ h3 {
     margin-top: 1rem;
 }
 
-.price {
-    font-size: 18px;
-    font-weight: bold;
-    color: #060741;
+/* Produtos */
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px; /* Espaço entre os carrosséis */
 }
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Transição mais suave */
+}
+
+.product-card {
+    width: 20rem;
+    background-color: #fff;
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin: 0 10px; /* Espaço entre os cards */
+    text-align: center;
+    padding: 20px;
+    flex: 0 0 auto;
+    transition: transform 0.3s ease-in-out; /* Efeito de hover */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Eleva o card ao passar o mouse */
+}
+
+.product-image {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.product-details {
+    margin-top: 15px;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    height: auto; /* Altura automática */
+    font-weight: 600; /* Peso da fonte */
+}   
+
+.product-price {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333; /* Cor do preço */
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.carousel-controls button {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%; /* Botões circulares */
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra nos botões */
+    transition: background-color 0.3s ease; /* Transição de cor */
+}
+
+.carousel-controls button:hover {
+    background-color: rgba(255, 255, 255, 1); /* Fundo mais opaco ao passar o mouse */
+}
+
+/* ... (seu CSS existente) ... */
+
+/* Botão do WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366; /* Cor do WhatsApp */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+}
+
+.whatsapp-button img {
+    width: 40px;
+    height: 40px;
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        width: 90%;
+        margin: 0 auto 20px; /* Centraliza e adiciona margem */
+    }
+
+    .carousel-controls button {
+        padding: 8px 12px;
+        font-size: 1.2rem;
+    }
+}
+
 
 
 @media (max-width: 768px) {
